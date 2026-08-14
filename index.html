@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
-    <title>Mapa Santiago con Puntos</title>
+    <title>Mapa Santiago con Paraderos</title>
     <style>
         body, html { margin:0; padding:0; height:100%; width:100%; }
         #map { width:100%; height:100%; }
@@ -17,28 +17,34 @@
         const map = new maplibregl.Map({
             container: "map",
             style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
-            center: [-70.6483, -33.4569], 
+            center: [-70.6483, -33.4569], // Santiago
             zoom: 12,
             maxBounds: [
-                [-70.85, -33.65], 
-                [-70.45, -33.35]
+                [-70.85, -33.65], // suroeste
+                [-70.45, -33.35]  // noreste
             ]
         });
 
-        const parada = {
-            "stop_id": "PE163",
-            "name": "PE163-Parada / (M) Santa Julia",
-            "lat": -33.53075499540604,
-            "lon": -70.6056050008991,
-            "wheelchair_boarding": "sin_info",
-            "es_metro": false,
-            "reportes": []
-        };
+        // Cargar el archivo JSON externo
+        fetch("paraderos_recortados.json")
+            .then(response => response.json())
+            .then(paradas => {
+                paradas.forEach(p => {
+                    const popupContent = `
+                        <strong>${p.name}</strong><br>
+                        ID: ${p.stop_id}<br>
+                        Metro: ${p.es_metro ? "Sí" : "No"}<br>
+                        Accesibilidad: ${p.wheelchair_boarding}<br>
+                        Reportes: ${p.reportes.length > 0 ? p.reportes.join(", ") : "Ninguno"}
+                    `;
 
-        const marker = new maplibregl.Marker()
-            .setLngLat([parada.lon, parada.lat])
-            .setPopup(new maplibregl.Popup().setText(parada.name))
-            .addTo(map);
+                    new maplibregl.Marker()
+                        .setLngLat([p.lon, p.lat])
+                        .setPopup(new maplibregl.Popup().setHTML(popupContent))
+                        .addTo(map);
+                });
+            })
+            .catch(err => console.error("Error cargando JSON:", err));
     </script>
 </body>
 </html>

@@ -1,0 +1,1001 @@
+[
+ {
+    "stop_id": "PD1641",
+    "name": "PD1641-Parada 7 / (M) Macul",
+    "lat": -33.50917799933734,
+    "lon": -70.58957699977343,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE158",
+    "name": "PE158-Parada / Colegio José A. Lecaros",
+    "lat": -33.514682019609836,
+    "lon": -70.59252538242626,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE159",
+    "name": "PE159-Parada / Fiscalía La Florida",
+    "lat": -33.51655611493315,
+    "lon": -70.59418788408911,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE160",
+    "name": "PE160-Parada 3 / (M) Bellavista de La Florida",
+    "lat": -33.52141400078406,
+    "lon": -70.59770299416778,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE161",
+    "name": "PE161-Av. Américo Vespucio / esq. Pasaje 1",
+    "lat": -33.52494600386622,
+    "lon": -70.60174199697744,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE162",
+    "name": "PE162-Av. Américo Vespucio / esq. G. de Alderete",
+    "lat": -33.52783900129254,
+    "lon": -70.60370300387817,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE163",
+    "name": "PE163-Parada / (M) Santa Julia",
+    "lat": -33.53075499540604,
+    "lon": -70.6056050008991,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE164",
+    "name": "PE164-Av. Américo Vespucio / esq. Luis de Valdivia",
+    "lat": -33.53363699677901,
+    "lon": -70.60749499923723,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE165",
+    "name": "PE165-Punta Arenas / esq. Av. San Gregorio",
+    "lat": -33.537053832881384,
+    "lon": -70.61022788376557,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE166",
+    "name": "PE166-Av. Américo Vespucio / esq. 7 Oriente",
+    "lat": -33.53974744497533,
+    "lon": -70.61171286110007,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE167",
+    "name": "PE167-Parada 2 / (M) La Granja",
+    "lat": -33.54085300088391,
+    "lon": -70.61572299682234,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE168",
+    "name": "PE168-Av. Américo Vespucio / esq. La Serena",
+    "lat": -33.54137999597971,
+    "lon": -70.61927700419085,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE169",
+    "name": "PE169-Av. Américo Vespucio / esq. El Tabo",
+    "lat": -33.5419029975277,
+    "lon": -70.62305899943333,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE170",
+    "name": "PE170-Av. Américo Vespucio / esq. Laguna Blanca",
+    "lat": -33.54211100059332,
+    "lon": -70.62462799520222,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE171",
+    "name": "PE171-Av. Américo Vespucio / esq. Av. Santa Rosa",
+    "lat": -33.54268599508,
+    "lon": -70.62913200376384,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PE172",
+    "name": "PE172-Parada 1 / (M) Santa Rosa",
+    "lat": -33.5422316387307,
+    "lon": -70.63316496012065,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG197",
+    "name": "PG197-Av. Américo Vespucio / esq. Independencia",
+    "lat": -33.54168699995746,
+    "lon": -70.6380709988162,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG198",
+    "name": "PG198-Parada 2 / (M) San Ramón",
+    "lat": -33.5410256244519,
+    "lon": -70.64278485607669,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG199",
+    "name": "PG199-Av. Américo Vespucio / esq. Aníbal Zañartu",
+    "lat": -33.54049200381796,
+    "lon": -70.6465359989487,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG200",
+    "name": "PG200-Av. Américo Vespucio / esq. La Granja",
+    "lat": -33.53985615003248,
+    "lon": -70.6508308866723,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG201",
+    "name": "PG201-Av. Américo Vespucio / esq. Blas Vial",
+    "lat": -33.539076995576096,
+    "lon": -70.65500899654202,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG202",
+    "name": "PG202-Av. Américo Vespucio / esq. Uno Oriente",
+    "lat": -33.53823300004418,
+    "lon": -70.65986900170087,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG203",
+    "name": "PG203-Parada 3 / (M) La Cisterna",
+    "lat": -33.53738744235317,
+    "lon": -70.6631469726041,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG204",
+    "name": "PG204-Parada 6 / (M) La Cisterna",
+    "lat": -33.53974402558007,
+    "lon": -70.66499805235634,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG9",
+    "name": "PG9-Parada 1 / Paradero 27 Gran Avenida",
+    "lat": -33.54264799811182,
+    "lon": -70.66604899983744,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG10",
+    "name": "PG10-Parada 4 / (M) El Bosque",
+    "lat": -33.54614599956879,
+    "lon": -70.66884200149312,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG11",
+    "name": "PG11-Parada / Paradero 29 Gran Avenida",
+    "lat": -33.54886897602174,
+    "lon": -70.6710056158647,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG12",
+    "name": "PG12-Parada 1 / Paradero 30 Gran Avenida",
+    "lat": -33.55079499744085,
+    "lon": -70.67251299911943,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG13",
+    "name": "PG13-Parada 1 / Paradero 31 Gran Avenida",
+    "lat": -33.553899074493714,
+    "lon": -70.67496221118469,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG14",
+    "name": "PG14-Parada / Paradero 32 Gran Avenida",
+    "lat": -33.556043997688576,
+    "lon": -70.67662899948499,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG15",
+    "name": "PG15-Parada 1 / Esc.Especialidades FACH",
+    "lat": -33.55825241786634,
+    "lon": -70.67835974674139,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG16",
+    "name": "PG16-Parada / Paradero 33 Gran Avenida",
+    "lat": -33.55946056468151,
+    "lon": -70.67930387005384,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG17",
+    "name": "PG17-Parada / Escuela de Aviación",
+    "lat": -33.5616039978177,
+    "lon": -70.68099000075551,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG18",
+    "name": "PG18-Parada / Paradero 35 Gran Avenida",
+    "lat": -33.563729000793685,
+    "lon": -70.68269000278735,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG19",
+    "name": "PG19-Parada / Paradero 36 Gran Avenida",
+    "lat": -33.566093003754055,
+    "lon": -70.68462500103142,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG20",
+    "name": "PG20-Parada 1 / Paradero 36 1/2 Gran Avenida",
+    "lat": -33.56810999737743,
+    "lon": -70.68628199702447,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG21",
+    "name": "PG21-Parada / Paradero 37 Gran Avenida",
+    "lat": -33.57090000328001,
+    "lon": -70.68834199818602,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG22",
+    "name": "PG22-Parada / Paradero 38 Gran Avenida",
+    "lat": -33.5736827799105,
+    "lon": -70.69036731512308,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG23",
+    "name": "PG23-Parada 1 / Paradero 39 Gran Avenida",
+    "lat": -33.5759149135444,
+    "lon": -70.69199723919947,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG24",
+    "name": "PG24-Parada / Paradero 40 Gran Avenida",
+    "lat": -33.57856199878302,
+    "lon": -70.69392600285386,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG25",
+    "name": "PG25-Parada 1 / Paradero 41 Gran Avenida",
+    "lat": -33.58238500270091,
+    "lon": -70.69676000029837,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG26",
+    "name": "PG26-Parada 2 / Estación Freire",
+    "lat": -33.585696001109184,
+    "lon": -70.70027600426452,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG27",
+    "name": "PG27-Av.José M. Balmaceda / esq. Urmeneta",
+    "lat": -33.5851778123671,
+    "lon": -70.70386589008004,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG28",
+    "name": "PG28-Urmeneta / esq. 12 de Febrero",
+    "lat": -33.58650099645281,
+    "lon": -70.70460199898103,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG29",
+    "name": "PG29-Urmeneta / esq. Av. Colón-Norte",
+    "lat": -33.58908915540463,
+    "lon": -70.70556876693055,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG30",
+    "name": "PG30-Urmeneta / esq. Covadonga",
+    "lat": -33.5934520040039,
+    "lon": -70.70715299985845,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG31",
+    "name": "PG31-Avenida San José / esq. Eyzaguirre",
+    "lat": -33.59615699963755,
+    "lon": -70.70692700144875,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG32",
+    "name": "PG32-Avenida San José / esq. Bulnes",
+    "lat": -33.59679511566821,
+    "lon": -70.70260801231068,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG33",
+    "name": "PG33-José Joaquín Pérez / esq. San Alfonso",
+    "lat": -33.59962143668697,
+    "lon": -70.70209661763015,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG205",
+    "name": "PG205-José Joaquín Pérez / esq. Nogales",
+    "lat": -33.602539998663836,
+    "lon": -70.70306999408204,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG206",
+    "name": "PG206-José Joaquín Pérez / esq. Alfonso Donoso",
+    "lat": -33.60581090382209,
+    "lon": -70.70420537199557,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG903",
+    "name": "PG903-Barros Arana / esq. Eucaliptus",
+    "lat": -33.608143995474386,
+    "lon": -70.7038219999529,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG904",
+    "name": "PG904-Barros Arana / esq. E. Madrid Osorio",
+    "lat": -33.60998400239782,
+    "lon": -70.70476000392974,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG905",
+    "name": "PG905-Barros Arana / esq. M.Toro y Zambrano",
+    "lat": -33.61250360819768,
+    "lon": -70.70601195280791,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG748",
+    "name": "PG748-Mateo de Toro y Z. / esq. Reina del Mar",
+    "lat": -33.613507081342064,
+    "lon": -70.70416731717299,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG749",
+    "name": "PG749-Mateo de Toro y Z. / esq. El Topacio",
+    "lat": -33.614273420833655,
+    "lon": -70.70218039056303,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG1895",
+    "name": "PG1895-Mateo de Toro y Z. / esq. Las Carabelas",
+    "lat": -33.61498651801267,
+    "lon": -70.7002187572345,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG1636",
+    "name": "PG1636-Mateo de Toro y Z. / esq. Avenida Portales",
+    "lat": -33.6158106429988,
+    "lon": -70.69803957135625,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG697",
+    "name": "PG697-Avenida Portales / esq. General Urrutia",
+    "lat": -33.618358744526184,
+    "lon": -70.69909833635896,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG698",
+    "name": "PG698-Parada 4 / Est..Cinco Pinos",
+    "lat": -33.62226300015281,
+    "lon": -70.70066499624535,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG699",
+    "name": "PG699-Parada 2 / Est..Cinco Pinos",
+    "lat": -33.62461334483196,
+    "lon": -70.70166888751197,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG700",
+    "name": "PG700-Parada / Canelo de Nos",
+    "lat": -33.62647900069308,
+    "lon": -70.7024279966925,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG1763",
+    "name": "PG1763-Avenida Portales / esq. Frida Khalo",
+    "lat": -33.628787056004604,
+    "lon": -70.70339297393814,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG1745",
+    "name": "PG1745-Parada 2 / Estación Nos",
+    "lat": -33.63326000052585,
+    "lon": -70.70577899579206,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG702",
+    "name": "PG702-Avenida Portales / esq. García de La Huerta",
+    "lat": -33.63477500025304,
+    "lon": -70.70654599972931,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG703",
+    "name": "PG703-Avenida Portales / esq. Regina Gálvez",
+    "lat": -33.637437001260146,
+    "lon": -70.70771300270796,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG1605",
+    "name": "PG1605-Avenida Portales / esq. Robert Kennedy",
+    "lat": -33.64005899594378,
+    "lon": -70.70843300153825,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG1702",
+    "name": "PG1702-Avenida Portales / esq. Enrique Lynch",
+    "lat": -33.64182832829384,
+    "lon": -70.70912086351913,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG1607",
+    "name": "PG1607-Av. Pdte. J. Alessandri R. / esq. Carlos Alegría",
+    "lat": -33.64289658849535,
+    "lon": -70.71123195042934,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG1615",
+    "name": "PG1615-Av. Pdte. J. Alessandri R. / esq. Julio Zúñiga",
+    "lat": -33.64120800037161,
+    "lon": -70.71146900402404,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG1574",
+    "name": "PG1574-Av. Pdte. J. Alessandri R. / esq. Regina Gálvez",
+    "lat": -33.63857999571444,
+    "lon": -70.71187899779133,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG728",
+    "name": "PG728-Parada 1 / Estación Nos",
+    "lat": -33.633265991749376,
+    "lon": -70.70551795273504,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG729",
+    "name": "PG729-Avenida Portales / esq. Leonardo Da Vinci",
+    "lat": -33.629047999452524,
+    "lon": -70.70338699708243,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG1764",
+    "name": "PG1764-Parada / Canelo de Nos",
+    "lat": -33.626584002653786,
+    "lon": -70.70236400386331,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG730",
+    "name": "PG730-Parada 1 / Est..Cinco Pinos",
+    "lat": -33.62452209852186,
+    "lon": -70.70154722439678,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG731",
+    "name": "PG731-Parada 3 / Est..Cinco Pinos",
+    "lat": -33.622418092919695,
+    "lon": -70.70062088459215,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG732",
+    "name": "PG732-Avenida Portales / esq. Avenida Central",
+    "lat": -33.618762001119926,
+    "lon": -70.6991959972747,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG1637",
+    "name": "PG1637-Mateo de Toro y Z. / esq. Agustín Venegas Y.",
+    "lat": -33.615551998851416,
+    "lon": -70.69842114250122,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG1894",
+    "name": "PG1894-Mateo de Toro y Z. / esq. Augusto Carozzi P.",
+    "lat": -33.61492686360572,
+    "lon": -70.70011386528535,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG808",
+    "name": "PG808-Mateo de Toro y Z. / esq. El Topacio",
+    "lat": -33.6142891766062,
+    "lon": -70.7017989441208,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG809",
+    "name": "PG809-Mateo de Toro y Z. / esq. Reina del Mar",
+    "lat": -33.61350582370511,
+    "lon": -70.70380897156005,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG810",
+    "name": "PG810-Mateo de Toro y Z. / esq. Barros Arana",
+    "lat": -33.61269243805675,
+    "lon": -70.70590906789127,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG916",
+    "name": "PG916-Barros Arana / esq. Eucaliptus",
+    "lat": -33.60989431711444,
+    "lon": -70.7045749949904,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG917",
+    "name": "PG917-Barros Arana / esq. Eucaliptus",
+    "lat": -33.60869399647701,
+    "lon": -70.70394199966685,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG207",
+    "name": "PG207-Eucaliptus / esq. Bulnes",
+    "lat": -33.60753995536303,
+    "lon": -70.70590300732384,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG208",
+    "name": "PG208-Eucaliptus / esq. Freire",
+    "lat": -33.606620107225375,
+    "lon": -70.70829688305503,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG209",
+    "name": "PG209-Freire / esq. Maestranza",
+    "lat": -33.6042619984835,
+    "lon": -70.70768699594025,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG210",
+    "name": "PG210-Freire / esq. Nogales",
+    "lat": -33.602079001635154,
+    "lon": -70.70694599472006,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG211",
+    "name": "PG211-Freire / esq. San Alfonso",
+    "lat": -33.59930207012216,
+    "lon": -70.70612966659188,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG37",
+    "name": "PG37-Freire / esq. San José",
+    "lat": -33.59675000231346,
+    "lon": -70.70526300340394,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG1599",
+    "name": "PG1599-Parada 2 / Plaza de San Bernardo",
+    "lat": -33.592248610669415,
+    "lon": -70.70368891743158,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG40",
+    "name": "PG40-Freire / esq. 12 de Febrero",
+    "lat": -33.58807136797971,
+    "lon": -70.70086731018979,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG41",
+    "name": "PG41-Parada 1 / Estación Freire",
+    "lat": -33.58620399507613,
+    "lon": -70.69924599844292,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG43",
+    "name": "PG43-Parada 2 / Paradero 41 Gran Avenida",
+    "lat": -33.58211200352509,
+    "lon": -70.6962369941507,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG44",
+    "name": "PG44-Parada / Paradero 40 Gran Avenida",
+    "lat": -33.5796831570053,
+    "lon": -70.69441693656064,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG45",
+    "name": "PG45-Parada 2 / Paradero 39 Gran Avenida",
+    "lat": -33.57684499663318,
+    "lon": -70.69236499683369,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG46",
+    "name": "PG46-Parada / Paradero 38 Gran Avenida",
+    "lat": -33.574474002155526,
+    "lon": -70.69063000074378,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG47",
+    "name": "PG47-Parada / Paradero 37 Gran Avenida",
+    "lat": -33.57179781616371,
+    "lon": -70.68865148281823,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG48",
+    "name": "PG48-Parada 2 / Paradero 36 1/2 Gran Avenida",
+    "lat": -33.56868504012606,
+    "lon": -70.6864190142551,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG49",
+    "name": "PG49-Parada / Paradero 36 Gran Avenida",
+    "lat": -33.56642100327678,
+    "lon": -70.6845690003006,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG50",
+    "name": "PG50-Parada / Paradero 35 Gran Avenida",
+    "lat": -33.564229003454685,
+    "lon": -70.68278700029295,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG51",
+    "name": "PG51-Parada / Escuela de Aviación",
+    "lat": -33.56162803808275,
+    "lon": -70.6807278613778,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG52",
+    "name": "PG52-Parada / Paradero 33 Gran Avenida",
+    "lat": -33.55922800115213,
+    "lon": -70.67884699791347,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG53",
+    "name": "PG53-Parada 2 / Esc.Especialidades FACH",
+    "lat": -33.557610001369895,
+    "lon": -70.67757400456435,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG54",
+    "name": "PG54-Parada / Paradero 32 Gran Avenida",
+    "lat": -33.55572299569868,
+    "lon": -70.67608200295678,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG55",
+    "name": "PG55-Parada 2 / Paradero 31 Gran Avenida",
+    "lat": -33.55376999889814,
+    "lon": -70.67454299655071,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG56",
+    "name": "PG56-Parada 2 / Paradero 30 Gran Avenida",
+    "lat": -33.55134510708918,
+    "lon": -70.67262390771464,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG57",
+    "name": "PG57-Parada / Paradero 29 Gran Avenida",
+    "lat": -33.549225003588184,
+    "lon": -70.67097399978753,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG58",
+    "name": "PG58-Parada 5 / (M) El Bosque",
+    "lat": -33.54589699943572,
+    "lon": -70.66833099836431,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG59",
+    "name": "PG59-Parada 2 / Paradero 27 Gran Avenida",
+    "lat": -33.543070998781005,
+    "lon": -70.6660860024396,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  },
+  {
+    "stop_id": "PG1573",
+    "name": "PG1573-Parada 5 / (M) La Cisterna",
+    "lat": -33.53922306635568,
+    "lon": -70.66459714518267,
+    "wheelchair_boarding": "sin_info",
+    "es_metro": false,
+    "reportes": []
+  }
+]
