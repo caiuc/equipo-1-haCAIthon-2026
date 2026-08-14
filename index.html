@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
-    <title>Mapa Santiago con Paraderos</title>
+    <title>Mapa Santiago Optimizado</title>
     <style>
         body, html { margin:0; padding:0; height:100%; width:100%; }
         #map { width:100%; height:100%; }
@@ -25,47 +25,83 @@
             ]
         });
 
-        let paradas = [];
-        let markers = [];
-
-        // Cargar el archivo JSON externo
+        // Cargar datos como GeoJSON
         fetch("paraderos_accesibilidad.json")
-            .then(response => response.json())
+            .then(r => r.json())
             .then(data => {
-                paradas = Array.isArray(data) ? data : [data];
+                const geojson = {
+                    type: "FeatureCollection",
+                    features: data.map(p => ({
+                        type: "Feature",
+                        geometry: {
+                            type: "Point",
+                            coordinates: [p.lon, p.lat]
+                        },
+                        properties: {
+                            name: p.name,
+                            stop_id: p.stop_id,
+                            // convierte a booleano
+                            es_metro: p.es_metro === true || p.es_metro === "true" || p.es_metro === "Sí",
+                            wheelchair_boarding: p.wheelchair_boarding,
+                            reportes: p.reportes || []
+                        }
+                    }))
+                };
+
+
+                map.on("load", () => {
+                    // Fuente con paraderos
+                    map.addSource("paradas", {
+                        type: "geojson",
+                        data: geojson
+                    });
+
+                    // Capa de puntos
+                    map.addLayer({
+                        id: "paradas-layer",
+                        type: "circle",
+                        source: "paradas",
+                        paint: {
+                            "circle-radius": 5,
+                            "circle-color": [
+                                "case",
+                                ["==", ["get", "es_metro"], true], "#ff0000", // rojo si es metro
+                                "#007cbf" // azul si no lo es
+                            ]
+                        }
+                    });
+
+
+
+                    // Popup al hacer click
+                    map.on("click", "paradas-layer", e => {
+                        const p = e.features[0].properties;
+                        const popupContent = `
+                            <strong>${p.name}</strong><br>
+                            ID: ${p.stop_id}<br>
+                            Metro: ${p.es_metro === "true" ? "Sí" : "No"}<br>
+                            Accesibilidad: ${p.wheelchair_boarding}<br>
+                            Reportes: ${p.reportes.length > 0 ? p.reportes : "Ninguno"}
+                        `;
+                        new maplibregl.Popup()
+                            .setLngLat(e.features[0].geometry.coordinates)
+                            .setHTML(popupContent)
+                            .addTo(map);
+                    });
+
+                    // Mostrar solo con zoom suficiente
+                    map.setLayoutProperty("paradas-layer", "visibility", "none");
+                    map.on("zoomend", () => {
+                        if (map.getZoom() >= 15) {
+                            map.setLayoutProperty("paradas-layer", "visibility", "visible");
+                        } else {
+                            map.setLayoutProperty("paradas-layer", "visibility", "none");
+                        }
+                    });
+                });
             })
             .catch(err => console.error("Error cargando JSON:", err));
-
-        // Función para mostrar marcadores
-        function mostrarMarcadores() {
-            // Elimina marcadores previos
-            markers.forEach(m => m.remove());
-            markers = [];
-
-            // Solo mostrar si el zoom es suficiente
-            if (map.getZoom() >= 13) {
-                paradas.forEach(p => {
-                    const popupContent = `
-                        <strong>${p.name}</strong><br>
-                        ID: ${p.stop_id}<br>
-                        Metro: ${p.es_metro ? "Sí" : "No"}<br>
-                        Accesibilidad: ${p.wheelchair_boarding}<br>
-                        Reportes: ${p.reportes && p.reportes.length > 0 ? p.reportes.join(", ") : "Ninguno"}
-                    `;
-
-                    const marker = new maplibregl.Marker()
-                        .setLngLat([p.lon, p.lat])
-                        .setPopup(new maplibregl.Popup().setHTML(popupContent))
-                        .addTo(map);
-
-                    markers.push(marker);
-                });
-            }
-        }
-
-        // Escuchar cambios de zoom o movimiento
-        map.on("moveend", mostrarMarcadores);
-        map.on("zoomend", mostrarMarcadores);
     </script>
 </body>
 </html>
+
