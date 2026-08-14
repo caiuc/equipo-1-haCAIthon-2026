@@ -1,0 +1,318 @@
+:root {
+    /* ---- Color tokens ---- */
+    --ink:          #12161C;
+    --ink-soft:     #262C36;
+    --paper:        #EEF0EE;
+    --paper-raised: #FFFFFF;
+    --accent:       #FFC629;
+    --line:         #D8DCD8;
+
+    --ok:      #1F9D55;
+    --ok-bg:   #E4F5EB;
+    --bad:     #E5484D;
+    --bad-bg:  #FCE8E8;
+    --unknown: #8A94A6;
+    --unknown-bg: #EBEDF0;
+
+    /* ---- Type tokens ---- */
+    --f-display: "Space Grotesk", sans-serif;
+    --f-body:    "Inter", sans-serif;
+    --f-mono:    "IBM Plex Mono", monospace;
+
+    --radius: 10px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    height: 100%;
+    font-family: var(--f-body);
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  a { color: inherit; }
+
+  /* ============ HEADER ============ */
+  header.top {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .wordmark {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+
+  .wordmark .tag {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: 1px solid rgba(255,198,41,0.4);
+    padding: 3px 8px;
+    border-radius: 100px;
+  }
+
+  nav.top-nav {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  nav.top-nav a {
+    text-decoration: none;
+    color: rgba(238,240,238,0.75);
+    transition: color 0.15s ease;
+  }
+  nav.top-nav a:hover,
+  nav.top-nav a:focus-visible { color: var(--paper); }
+
+  /* ============ HERO ============ */
+  section.hero {
+    padding: 48px 28px 32px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-family: var(--f-display);
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0 0 14px;
+    max-width: 16ch;
+  }
+
+  .hero p.lede {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin: 0 0 28px;
+  }
+
+  /* ---- Signature element: roundel stat badges ---- */
+  .roundels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .roundel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 8px 16px 8px 8px;
+  }
+
+  .roundel .dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--f-mono);
+    font-weight: 500;
+    font-size: 13px;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .roundel .dot.ok       { background: var(--ok); }
+  .roundel .dot.bad      { background: var(--bad); }
+  .roundel .dot.unknown  { background: var(--unknown); }
+
+  .roundel .label {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .roundel .label .n {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  /* ============ MAP SECTION ============ */
+  section.map-wrap {
+    max-width: 1180px;
+    margin: 0 auto 56px;
+    padding: 0 28px;
+  }
+
+  .map-frame {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 12px 32px rgba(18,22,28,0.10);
+  }
+
+  #mapa {
+    height: 620px;
+    width: 100%;
+    background: var(--paper);
+  }
+
+  /* Floating search panel */
+  .panel-buscar {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1000;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 14px;
+    width: 260px;
+    box-shadow: 0 6px 18px rgba(18,22,28,0.12);
+  }
+
+  .panel-buscar .titulo {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+
+  .panel-buscar input {
+    width: 100%;
+    padding: 9px 10px;
+    margin-bottom: 8px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-family: var(--f-body);
+    font-size: 13px;
+    background: var(--paper);
+  }
+
+  .panel-buscar input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  .panel-buscar button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--f-body);
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  .panel-buscar button:hover,
+  .panel-buscar button:focus-visible { background: var(--ink-soft); }
+
+  /* Floating legend, bottom-left */
+  .panel-leyenda {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    z-index: 1000;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    font-size: 12px;
+    font-family: var(--f-mono);
+    box-shadow: 0 6px 18px rgba(18,22,28,0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .panel-leyenda .item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .panel-leyenda .sw {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .sw.ok { background: var(--ok); }
+  .sw.bad { background: var(--bad); }
+  .sw.unknown { background: var(--unknown); }
+
+  /* Popup content inside Leaflet markers */
+  .popup-reporte { min-width: 210px; font-family: var(--f-body); }
+  .popup-reporte strong { font-family: var(--f-display); font-size: 14px; }
+  .popup-reporte textarea {
+    width: 100%;
+    margin-top: 8px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-family: var(--f-body);
+    font-size: 13px;
+    resize: vertical;
+  }
+  .popup-reporte button {
+    margin-top: 8px;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 6px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* ============ FOOTER ============ */
+  footer.foot {
+    border-top: 1px solid var(--line);
+    padding: 20px 28px;
+    max-width: 1180px;
+    margin: 0 auto;
+    font-family: var(--f-mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 720px) {
+    header.top { flex-direction: column; align-items: flex-start; gap: 10px; }
+    nav.top-nav { gap: 16px; font-size: 13px; }
+    #mapa { height: 480px; }
+    .panel-buscar { width: calc(100% - 32px); left: 16px; right: 16px; }
+    .panel-leyenda { flex-direction: row; flex-wrap: wrap; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
