@@ -40,7 +40,6 @@
                         properties: {
                             name: p.name,
                             stop_id: p.stop_id,
-                            // convierte a booleano
                             es_metro: p.es_metro === true || p.es_metro === "true" || p.es_metro === "Sí",
                             wheelchair_boarding: p.wheelchair_boarding,
                             reportes: p.reportes || []
@@ -48,15 +47,9 @@
                     }))
                 };
 
-
                 map.on("load", () => {
-                    // Fuente con paraderos
-                    map.addSource("paradas", {
-                        type: "geojson",
-                        data: geojson
-                    });
+                    map.addSource("paradas", { type: "geojson", data: geojson });
 
-                    // Capa de puntos
                     map.addLayer({
                         id: "paradas-layer",
                         type: "circle",
@@ -71,15 +64,13 @@
                         }
                     });
 
-
-
                     // Popup al hacer click
                     map.on("click", "paradas-layer", e => {
                         const p = e.features[0].properties;
                         const popupContent = `
                             <strong>${p.name}</strong><br>
                             ID: ${p.stop_id}<br>
-                            Metro: ${p.es_metro === "true" ? "Sí" : "No"}<br>
+                            Metro: ${p.es_metro ? "Sí" : "No"}<br>
                             Accesibilidad: ${p.wheelchair_boarding}<br>
                             Reportes: ${p.reportes.length > 0 ? p.reportes : "Ninguno"}
                         `;
@@ -92,16 +83,41 @@
                     // Mostrar solo con zoom suficiente
                     map.setLayoutProperty("paradas-layer", "visibility", "none");
                     map.on("zoomend", () => {
-                        if (map.getZoom() >= 15) {
-                            map.setLayoutProperty("paradas-layer", "visibility", "visible");
-                        } else {
-                            map.setLayoutProperty("paradas-layer", "visibility", "none");
-                        }
+                        map.setLayoutProperty(
+                            "paradas-layer",
+                            "visibility",
+                            map.getZoom() >= 15 ? "visible" : "none"
+                        );
                     });
                 });
             })
             .catch(err => console.error("Error cargando JSON:", err));
+
+        // 🚩 Geolocalización del usuario
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                pos => {
+                    const lng = pos.coords.longitude;
+                    const lat = pos.coords.latitude;
+
+                    // Centrar el mapa en la ubicación
+                    map.setCenter([lng, lat]);
+                    map.setZoom(15);
+
+                    // Añadir marcador en la ubicación
+                    new maplibregl.Marker({ color: "green" })
+                        .setLngLat([lng, lat])
+                        .setPopup(new maplibregl.Popup().setText("Tu ubicación"))
+                        .addTo(map);
+                },
+                err => {
+                    console.error("Error obteniendo ubicación:", err);
+                    alert("No se pudo obtener tu ubicación");
+                }
+            );
+        } else {
+            alert("Tu navegador no soporta geolocalización");
+        }
     </script>
 </body>
 </html>
-
