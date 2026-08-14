@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+    <title>Mapa Santiago con Puntos</title>
+    <style>
+        body, html { margin:0; padding:0; height:100%; width:100%; }
+        #map { width:100%; height:100%; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script type="module">
+        import * as maplibregl from "https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.mjs";
+
+        const map = new maplibregl.Map({
+            container: "map",
+            style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+            center: [-70.6483, -33.4569], 
+            zoom: 12,
+            maxBounds: [
+                [-70.85, -33.65], 
+                [-70.45, -33.35]
+            ]
+        });
+
+        const parada = {
+            "stop_id": "PE163",
+            "name": "PE163-Parada / (M) Santa Julia",
+            "lat": -33.53075499540604,
+            "lon": -70.6056050008991,
+            "wheelchair_boarding": "sin_info",
+            "es_metro": false,
+            "reportes": []
+        };
+
+        const marker = new maplibregl.Marker()
+            .setLngLat([parada.lon, parada.lat])
+            .setPopup(new maplibregl.Popup().setText(parada.name))
+            .addTo(map);
+    </script>
+</body>
+</html>
