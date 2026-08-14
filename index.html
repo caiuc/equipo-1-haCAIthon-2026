@@ -25,26 +25,47 @@
             ]
         });
 
+        let paradas = [];
+        let markers = [];
+
         // Cargar el archivo JSON externo
-        fetch("paraderos_recortados.json")
+        fetch("paraderos_accesibilidad.json")
             .then(response => response.json())
-            .then(paradas => {
+            .then(data => {
+                paradas = Array.isArray(data) ? data : [data];
+            })
+            .catch(err => console.error("Error cargando JSON:", err));
+
+        // Función para mostrar marcadores
+        function mostrarMarcadores() {
+            // Elimina marcadores previos
+            markers.forEach(m => m.remove());
+            markers = [];
+
+            // Solo mostrar si el zoom es suficiente
+            if (map.getZoom() >= 13) {
                 paradas.forEach(p => {
                     const popupContent = `
                         <strong>${p.name}</strong><br>
                         ID: ${p.stop_id}<br>
                         Metro: ${p.es_metro ? "Sí" : "No"}<br>
                         Accesibilidad: ${p.wheelchair_boarding}<br>
-                        Reportes: ${p.reportes.length > 0 ? p.reportes.join(", ") : "Ninguno"}
+                        Reportes: ${p.reportes && p.reportes.length > 0 ? p.reportes.join(", ") : "Ninguno"}
                     `;
 
-                    new maplibregl.Marker()
+                    const marker = new maplibregl.Marker()
                         .setLngLat([p.lon, p.lat])
                         .setPopup(new maplibregl.Popup().setHTML(popupContent))
                         .addTo(map);
+
+                    markers.push(marker);
                 });
-            })
-            .catch(err => console.error("Error cargando JSON:", err));
+            }
+        }
+
+        // Escuchar cambios de zoom o movimiento
+        map.on("moveend", mostrarMarcadores);
+        map.on("zoomend", mostrarMarcadores);
     </script>
 </body>
 </html>
