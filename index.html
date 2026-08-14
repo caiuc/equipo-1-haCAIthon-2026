@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+    <title>Mapa Santiago Optimizado</title>
+    <style>
+        body, html { margin:0; padding:0; height:100%; width:100%; font-family: sans-serif; }
+        #map { width:100%; height:100%; }
+        
+        #sidebar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            width: 250px;
+        }
+        
+        #sidebar h3 {
+            margin: 0 0 15px 0;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        #btnUbicacion {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        #btnUbicacion:hover { background-color: #e0e0e0; }
+
+        .instruccion {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .btn-marcador {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #fff;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+
+        .btn-marcador:hover { background: #f9f9f9; }
+        
+        .btn-marcador.activo {
+            border-color: #333;
+            background: #eef;
+            transform: scale(0.98);
+        }
+
+        .color-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .dot-orange { background-color: orange; }
+        .dot-purple { background-color: purple; }
+
+        .seccion-cruces {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .seccion-cruces label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .leyenda-cruces {
+            font-size: 11px;
+            color: #555;
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+
+        .leyenda-item {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .leyenda-color {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="sidebar">
+        <h3>Menú de Ruta</h3>
+        <button id="btnUbicacion">📍 Mi ubicación</button>
+        
+        <div class="instruccion">Haz clic en un botón y luego haz clic en el mapa para ubicarlo:</div>
+        
+        <button id="btnInicio" class="btn-marcador">
+            <div class="color-dot dot-orange"></div> 
+            <span>Marcar Inicio</span>
+        </button>
+        <button id="btnFin" class="btn-marcador">
+            <div class="color-dot dot-purple"></div> 
+            <span>Marcar Fin</span>
+        </button>
+
+        <div class="seccion-cruces">
+            <label>
+                <input type="checkbox" id="chkCruces" style="margin-right: 8px;">
+                Mostrar Cruces de Calles
+            </label>
+            <div class="leyenda-cruces">
+                <span class="leyenda-item"><span class="leyenda-color" style="background:brown;"></span>Sin info</span>
+                <span class="leyenda-item"><span class="leyenda-color" style="background:orange;"></span>Ciegos</span>
+                <span class="leyenda-item"><span class="leyenda-color" style="background:yellow;"></span>Silla</span>
+                <span class="leyenda-item"><span class="leyenda-color" style="background:green;"></span>Ambos</span>
+                <span class="leyenda-item"><span class="leyenda-color" style="background:black;"></span>No apta</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import * as maplibregl from "https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.mjs";
+
+        const map = new maplibregl.Map({
+            container: "map",
+            style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+            center: [-70.6483, -33.4569], 
+            zoom: 12
+        });
+
+        const crucesGeoJSON = {
+            type: 'FeatureCollection',
+            features: [
+                { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.6480, -33.4560] }, properties: { id: 1, ciegos: false, silla: false, no_info: true } },
+                { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.6470, -33.4570] }, properties: { id: 2, ciegos: false, silla: false, no_info: true } },
+                { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.6490, -33.4565] }, properties: { id: 3, ciegos: false, silla: false, no_info: true } },
+                { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.6485, -33.4580] }, properties: { id: 4, ciegos: false, silla: false, no_info: true } },
+                { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.6465, -33.4550] }, properties: { id: 5, ciegos: false, silla: false, no_info: true } }
+            ]
+        };
+
+        map.on('load', () => {
+            map.addSource('cruces', { type: 'geojson', data: crucesGeoJSON });
+
+            map.addLayer({
+                id: 'cruces-layer',
+                type: 'circle',
+                source: 'cruces',
+                minzoom: 15,
+                layout: {
+                    'visibility': 'none'
+                },
+                paint: {
+                    'circle-radius': 9, 
+                    'circle-stroke-width': 2,
+                    'circle-stroke-color': '#ffffff',
+                    'circle-color': [
+                        'case',
+                        ['==', ['get', 'no_info'], true], 'brown',
+                        ['all', ['==', ['get', 'ciegos'], true], ['==', ['get', 'silla'], true]], 'green',
+                        ['==', ['get', 'ciegos'], true], 'orange',
+                        ['==', ['get', 'silla'], true], 'yellow',
+                        'black'
+                    ]
+                }
+            });
+
+            document.getElementById('chkCruces').addEventListener('change', (e) => {
+                const mostrar = e.target.checked;
+                map.setLayoutProperty('cruces-layer', 'visibility', mostrar ? 'visible' : 'none');
+                
+                if (mostrar && map.getZoom() < 15) {
+                    map.flyTo({ 
+                        zoom: 15.5, 
+                        center: [-70.6483, -33.4569]
+                    });
+                }
+            });
+
+            map.on('click', 'cruces-layer', (e) => {
+                const feature = e.features[0];
+                const props = feature.properties;
+                const coords = feature.geometry.coordinates.slice();
+
+                const popupHTML = `
+                    <div style="font-family: sans-serif; min-width: 180px;">
+                        <h4 style="margin: 0 0 10px 0;">Estado del Cruce #${props.id}</h4>
+                        <label style="display:block; margin-bottom: 5px; cursor:pointer;">
+                            <input type="checkbox" id="popup-ciegos" ${props.ciegos ? 'checked' : ''}> Apta para ciegos
+                        </label>
+                        <label style="display:block; margin-bottom: 5px; cursor:pointer;">
+                            <input type="checkbox" id="popup-silla" ${props.silla ? 'checked' : ''}> Apta para silla
+                        </label>
+                        <hr style="border: 0.5px solid #ccc; margin: 8px 0;">
+                        <label style="display:block; margin-bottom: 5px; cursor:pointer;">
+                            <input type="checkbox" id="popup-noinfo" ${props.no_info ? 'checked' : ''}> Sin información
+                        </label>
+                    </div>
+                `;
+
+                const popup = new maplibregl.Popup()
+                    .setLngLat(coords)
+                    .setHTML(popupHTML)
+                    .addTo(map);
+
+                const popupEl = popup.getElement();
+                const chkCiegos = popupEl.querySelector('#popup-ciegos');
+                const chkSilla = popupEl.querySelector('#popup-silla');
+                const chkNoInfo = popupEl.querySelector('#popup-noinfo');
+
+                const actualizarCruce = (propiedad, valor) => {
+                    const index = crucesGeoJSON.features.findIndex(f => f.properties.id === props.id);
+                    if (index === -1) return;
+
+                    const cruceModificado = crucesGeoJSON.features[index];
+                    cruceModificado.properties[propiedad] = valor;
+
+                    if (propiedad === 'no_info' && valor === true) {
+                        cruceModificado.properties.ciegos = false;
+                        cruceModificado.properties.silla = false;
+                        chkCiegos.checked = false;
+                        chkSilla.checked = false;
+                    } else if ((propiedad === 'ciegos' || propiedad === 'silla') && valor === true) {
+                        cruceModificado.properties.no_info = false;
+                        chkNoInfo.checked = false;
+                    }
+
+                    map.getSource('cruces').setData(crucesGeoJSON);
+                };
+
+                chkCiegos.addEventListener('change', (ev) => actualizarCruce('ciegos', ev.target.checked));
+                chkSilla.addEventListener('change', (ev) => actualizarCruce('silla', ev.target.checked));
+                chkNoInfo.addEventListener('change', (ev) => actualizarCruce('no_info', ev.target.checked));
+            });
+
+            map.on('mouseenter', 'cruces-layer', () => map.getCanvas().style.cursor = 'pointer');
+            map.on('mouseleave', 'cruces-layer', () => {
+                if(!modoColocacion) map.getCanvas().style.cursor = '';
+            });
+
+            cargarParaderos();
+        });
+
+        async function cargarParaderos() {
+            try {
+                const response = await fetch('paraderos_accesibilidad.json');
+                const data = await response.json();
+
+                const geojsonParaderos = {
+                    type: 'FeatureCollection',
+                    features: data.map(paradero => ({
+                        type: 'Feature',
+                        geometry: { type: 'Point', coordinates: [paradero.lon, paradero.lat] },
+                        properties: { id: paradero.stop_id, nombre: paradero.name, es_metro: paradero.es_metro }
+                    }))
+                };
+
+                map.addSource('paraderos', { type: 'geojson', data: geojsonParaderos });
+                map.addLayer({
+                    id: 'paraderos-layer',
+                    type: 'circle',
+                    source: 'paraderos',
+                    minzoom: 15,
+                    paint: {
+                        'circle-radius': 6,
+                        'circle-color': ['case', ['==', ['get', 'es_metro'], true], '#e63946', '#1d3557'],
+                        'circle-stroke-width': 2,
+                        'circle-stroke-color': '#ffffff'
+                    }
+                });
+            } catch (error) {
+                console.log("No se encontró el archivo de paraderos. Se omite esta capa.");
+            }
+        }
+
+        document.getElementById("btnUbicacion").addEventListener("click", () => {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(
+                    pos => {
+                        const lng = pos.coords.longitude;
+                        const lat = pos.coords.latitude;
+                        map.flyTo({ center: [lng, lat], zoom: 15 });
+
+                        new maplibregl.Marker({ color: "green" })
+                            .setLngLat([lng, lat])
+                            .setPopup(new maplibregl.Popup().setText("Tu ubicación"))
+                            .addTo(map);
+                    },
+                    err => alert("No se pudo obtener tu ubicación")
+                );
+            } else {
+                alert("Tu navegador no soporta geolocalización");
+            }
+        });
+
+        let inicioMarker = null;
+        let finMarker = null;
+        let modoColocacion = null;
+
+        const btnInicio = document.getElementById('btnInicio');
+        const btnFin = document.getElementById('btnFin');
+
+        function activarModo(modo) {
+            modoColocacion = modo;
+            btnInicio.classList.remove('activo');
+            btnFin.classList.remove('activo');
+
+            if (modo === 'inicio') {
+                btnInicio.classList.add('activo');
+                map.getCanvas().style.cursor = 'crosshair';
+            } else if (modo === 'fin') {
+                btnFin.classList.add('activo');
+                map.getCanvas().style.cursor = 'crosshair';
+            } else {
+                map.getCanvas().style.cursor = '';
+            }
+        }
+
+        btnInicio.addEventListener('click', () => activarModo(modoColocacion === 'inicio' ? null : 'inicio'));
+        btnFin.addEventListener('click', () => activarModo(modoColocacion === 'fin' ? null : 'fin'));
+
+        map.on('click', (e) => {
+            if (!modoColocacion) return;
+
+            if (modoColocacion === 'inicio') {
+                if (!inicioMarker) {
+                    inicioMarker = new maplibregl.Marker({ color: "orange", draggable: true })
+                        .setLngLat(e.lngLat).setPopup(new maplibregl.Popup().setText("Inicio")).addTo(map);
+                } else {
+                    inicioMarker.setLngLat(e.lngLat);
+                }
+            } else if (modoColocacion === 'fin') {
+                if (!finMarker) {
+                    finMarker = new maplibregl.Marker({ color: "purple", draggable: true })
+                        .setLngLat(e.lngLat).setPopup(new maplibregl.Popup().setText("Fin")).addTo(map);
+                } else {
+                    finMarker.setLngLat(e.lngLat);
+                }
+            }
+            activarModo(null);
+        });
+
+    </script>
+</body>
+</html>
