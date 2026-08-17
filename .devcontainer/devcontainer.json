@@ -1,0 +1,23 @@
+{
+  "name": "Rampas · HaCAithon 2026",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "forwardPorts": [
+    8000
+  ],
+  "portsAttributes": {
+    "8000": {
+      "label": "Aplicación",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postAttachCommand": {
+    "app": "python3 -m http.server 8000"
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    }
+  }
+}
